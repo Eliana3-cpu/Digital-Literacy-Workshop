@@ -1,0 +1,311 @@
+/* =========================================
+   1. DESIGN TOKENS
+   These are the only colors/fonts used on the
+   whole site. Change a value here and it
+   updates everywhere.
+========================================= */
+:root {
+  --cream: #FDF6EC;     /* page background */
+  --ink: #2B2420;       /* main text */
+  --red: #B5432E;       /* accent 1 */
+  --green: #3F6B4A;     /* accent 2 */
+  --gold: #D9A441;      /* accent 3 */
+  --muted: #8C7B68;     /* secondary text, borders */
+
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --max-width: 720px;
+}
+
+/* =========================================
+   2. RESET / BASE
+========================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+a {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: var(--green);
+}
+
+a:focus,
+button:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================
+   3. LAYOUT
+========================================= */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 48px 0;
+}
+
+/* =========================================
+   4. ACCENT BAR
+   A thin three-color strip at the very top
+   of every page — the one decorative flourish
+   on the whole site.
+========================================= */
+.accent-bar {
+  display: flex;
+  height: 6px;
+}
+
+.accent-bar span {
+  flex: 1;
+}
+
+.accent-bar .a-red { background: var(--red); }
+.accent-bar .a-green { background: var(--green); }
+.accent-bar .a-gold { background: var(--gold); }
+
+/* =========================================
+   5. HEADER / NAV
+========================================= */
+header {
+  background: var(--cream);
+  border-bottom: 1px solid var(--muted);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--red);
+}
+
+/* =========================================
+   6. HEADINGS WITH ACCENT UNDERLINE
+   Used for the main heading of every section.
+========================================= */
+.section-heading {
+  display: inline-block;
+  border-bottom: 3px solid var(--gold);
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   7. HERO (home page opening section)
+========================================= */
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 19px;
+  max-width: 60ch;
+}
+
+.accent-red { color: var(--red); }
+.accent-green { color: var(--green); }
+.accent-gold { color: var(--gold); }
+
+/* =========================================
+   8. STATS ROW
+========================================= */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  border-top: 1px solid var(--muted);
+  border-bottom: 1px solid var(--muted);
+  padding: 32px 0;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  display: block;
+}
+
+.stat-red { color: var(--red); }
+.stat-green { color: var(--green); }
+.stat-gold { color: var(--gold); }
+
+.stat-label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* =========================================
+   9. BUTTONS
+========================================= */
+.btn {
+  display: inline-block;
+  background: var(--red);
+  color: var(--cream);
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--green);
+  color: var(--cream);
+}
+
+/* =========================================
+   10. TAG PILLS
+   Small labels, e.g. for curriculum topics.
+========================================= */
+.tag-pill {
+  display: inline-block;
+  font-size: 13px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin: 0 6px 6px 0;
+}
+
+.tag-red { background: #F3D9D2; color: var(--red); }
+.tag-green { background: #DCE7DE; color: var(--green); }
+.tag-gold { background: #F5E4C3; color: #8A611E; }
+
+/* =========================================
+   11. TOPIC BLOCKS (What We Teach page)
+========================================= */
+.topic {
+  border-left: 4px solid var(--gold);
+  padding-left: 16px;
+  margin-bottom: 32px;
+}
+
+.topic h3 {
+  margin-bottom: 6px;
+}
+
+/* =========================================
+   12. BEFORE / AFTER LISTS (Progress page)
+========================================= */
+.progress-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.progress-columns > div {
+  flex: 1;
+  min-width: 240px;
+}
+
+.progress-columns h3 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.progress-columns ul {
+  padding-left: 20px;
+}
+
+/* =========================================
+   13. PLACEHOLDER NOTES
+========================================= */
+.placeholder-note {
+  background: #F5E4C3;
+  border: 1px dashed var(--gold);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--ink);
+  margin: 8px 0 24px;
+}
+
+/* =========================================
+   14. FOOTER
+========================================= */
+footer {
+  border-top: 1px solid var(--muted);
+  padding: 32px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* =========================================
+   15. RESPONSIVE
+========================================= */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .progress-columns {
+    flex-direction: column;
+  }
+}
